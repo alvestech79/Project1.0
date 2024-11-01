@@ -35,6 +35,7 @@
 /* Estilo do corpo da página */
 body {
   background: var(--bg-url) no-repeat top center / cover; /* Imagem de fundo com cobertura total */
+  height: 100vh;
 }
 
 /* Fonte padrão e cor do texto para todos os elementos dentro de body */
@@ -162,3 +163,14 @@ footer {
   text-align: center;
   font-size: 14px;
 }
+
+@media (min-width: 700px){
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+  .light{
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+
