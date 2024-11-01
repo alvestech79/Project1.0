@@ -1,0 +1,158 @@
+/* Reset básico para remover margens e preenchimentos padrão de todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis de cores e fundos para o modo padrão (escuro) */
+:root {
+  --text-color: white; /* Cor do texto */
+  --bg-url: url(./assets/bg-mobile.jpg); /* Imagem de fundo */
+  --stroke-color: rgba(255, 255, 255, 0.5); /* Cor da borda de elementos */
+  --surface-color: rgba(255, 255, 255, 0.05); /* Cor de fundo dos elementos */
+  --surface-color-hover: rgba(0, 0, 0, 0.02); /* Cor de fundo ao passar o mouse */
+  --highlight-color: rgba(255, 255, 255, 0.2); /* Cor de fundo ao destacar */
+  --switch-bg-url: url(./assets/moon-stars.svg); /* Ícone de tema no botão de alternância */
+}
+
+/* Variáveis para o modo claro */
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.05);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.2);
+  --switch-bg-url: url(./assets/sun.svg); /* Ícone de sol para o modo claro */
+}
+
+/* Estilo do corpo da página */
+body {
+  background: var(--bg-url) no-repeat top center / cover; /* Imagem de fundo com cobertura total */
+}
+
+/* Fonte padrão e cor do texto para todos os elementos dentro de body */
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+/* Estilo do contêiner principal */
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/* Estilo da seção de perfil */
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px; /* Tamanho da imagem de perfil */
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* Estilos para o botão de alternância de tema */
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center; /* Ícone do botão de tema */
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%); /* Centralização vertical */
+}
+
+/* Posicionamento do botão no modo claro */
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+/* Estilo do fundo do botão de alternância */
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px); /* Efeito de desfoque */
+  -webkit-backdrop-filter: blur(4px); /* Compatibilidade com Safari */
+  border-radius: 9999px; /* Borda arredondada */
+}
+
+/* Estilo dos links */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+/* Estilo dos links individuais */
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px); /* Efeito de desfoque */
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s; /* Transição suave no hover */
+}
+
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color); /* Borda destacada no hover */
+}
+
+/* Estilo dos ícones de redes sociais */
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px; /* Tamanho dos ícones */
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s; /* Transição suave no hover */
+  border-radius: 50%; /* Ícones circulares */
+}
+
+#social-links a:hover {
+  background: var(--highlight-color); /* Destaque no hover */
+}
+
+/* Estilo do rodapé */
+footer {
+  padding: 22px 0;
+  text-align: center;
+  font-size: 14px;
+}
