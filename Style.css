@@ -11,7 +11,12 @@
   --bg-url: url(./assets/bg-mobile.jpg); /* Imagem de fundo */
   --stroke-color: rgba(255, 255, 255, 0.5); /* Cor da borda de elementos */
   --surface-color: rgba(255, 255, 255, 0.05); /* Cor de fundo dos elementos */
-  --surface-color-hover: rgba(0, 0, 0, 0.02); /* Cor de fundo ao passar o mouse */
+  --surface-color-hover: rgba(
+    0,
+    0,
+    0,
+    0.02
+  ); /* Cor de fundo ao passar o mouse */
   --highlight-color: rgba(255, 255, 255, 0.2); /* Cor de fundo ao destacar */
   --switch-bg-url: url(./assets/moon-stars.svg); /* Ícone de tema no botão de alternância */
 }
@@ -40,7 +45,8 @@ body * {
 
 /* Estilo do contêiner principal */
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
 }
