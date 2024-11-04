@@ -7,12 +7,18 @@ function toggleMode() {
 
   // Substituir a imagem e o alt
   if (html.classList.contains("light")) {
-    // Se tiver light mode, adicionar a imagem Light e atualizar o alt
     img.setAttribute("src", "./assets/avatar-light.png")
     img.setAttribute("alt", "Foto do Mayk Brito sorrindo em modo claro")
   } else {
-    // Se tiver sem light mode, manter a imagem normal e o alt padrão
     img.setAttribute("src", "./assets/avatar.png")
     img.setAttribute("alt", "Foto do Mayk Brito sorrindo em modo escuro")
   }
+
+  // Mudar as cores dos ícones e texto
+  const textColor = html.classList.contains("light") ? "black" : "white"
+  document.body.style.color = textColor
+  const icons = document.querySelectorAll("#social-links ion-icon")
+  icons.forEach((icon) => {
+    icon.style.color = textColor
+  })
 }

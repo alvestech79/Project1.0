@@ -1,193 +1,146 @@
-/* Reset básico para remover margens e preenchimentos padrão de todos os elementos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Variáveis de cores e fundos para o modo padrão (escuro) */
 :root {
-  --text-color: white; /* Cor do texto */
-  --bg-url: url(./assets/bg-mobile.jpg); /* Imagem de fundo para o modo escuro */
-  --stroke-color: rgba(255, 255, 255, 0.5); /* Cor da borda de elementos */
-  --surface-color: rgba(255, 255, 255, 0.05); /* Cor de fundo dos elementos */
-  --surface-color-hover: rgba(0, 0, 0, 0.02); /* Cor de fundo ao passar o mouse */
-  --highlight-color: rgba(255, 255, 255, 0.2); /* Cor de fundo ao destacar */
-  --switch-bg-url: url(./assets/moon-stars.svg); /* Ícone de tema no botão de alternância */
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
-/* Variáveis para o modo claro */
 .light {
-  --text-color: black; /* Cor do texto no modo claro */
-  --bg-url: url(./assets/bg-mobile-light.jpg); /* Imagem de fundo para o modo claro */
-  --stroke-color: rgba(0, 0, 0, 0.05); /* Cor da borda de elementos no modo claro */
-  --surface-color: rgba(0, 0, 0, 0.05); /* Cor de fundo dos elementos no modo claro */
-  --surface-color-hover: rgba(0, 0, 0, 0.02); /* Cor de fundo ao passar o mouse no modo claro */
-  --highlight-color: rgba(0, 0, 0, 0.2); /* Cor de fundo ao destacar no modo claro */
-  --switch-bg-url: url(./assets/sun.svg); /* Ícone de sol para o modo claro */
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.05);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.2);
+  --switch-bg-url: url(./assets/sun.svg);
 }
 
-/* Estilo do corpo da página */
 body {
-  background: var(--bg-url) no-repeat top center / cover; /* Imagem de fundo com cobertura total */
-  height: 100vh; /* Altura total da viewport */
+  background: var(--bg-url) no-repeat top center / cover;
+  height: 100vh;
+  color: var(--text-color);
 }
 
-/* Fonte padrão e cor do texto para todos os elementos dentro de body */
 body * {
-  font-family: "Inter", sans-serif; /* Fonte utilizada na aplicação */
-  color: var(--text-color); /* Cor do texto baseada na variável */
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
 }
 
-/* Estilo do contêiner principal */
 #container {
-  width: 100%; /* Largura total */
-  max-width: 588px; /* Largura máxima do contêiner */
-  margin: 56px auto 0px; /* Margens para centralizar o contêiner */
-  padding: 0 24px; /* Preenchimento lateral */
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0;
+  padding: 0 24px;
 }
 
-/* Estilo da seção de perfil */
 #profile {
-  text-align: center; /* Alinhamento central do texto */
-  padding: 24px; /* Preenchimento interno */
+  text-align: center;
+  padding: 24px;
 }
 
 #profile img {
-  width: 200px; /* Tamanho da imagem de perfil */
+  width: 200px;
 }
 
 #profile p {
-  font-weight: 500; /* Peso da fonte */
-  line-height: 24px; /* Altura da linha */
-  margin-top: 8px; /* Margem superior */
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
 }
 
-/* Estilos para o botão de alternância de tema */
 #switch {
-  position: relative; /* Posicionamento relativo para o botão */
-  width: 64px; /* Largura do switch */
-  margin: 4px auto; /* Margem centralizada */
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
 }
 
 #switch button {
-  width: 32px; /* Largura do botão */
-  height: 32px; /* Altura do botão */
-  background: white var(--switch-bg-url) no-repeat center; /* Fundo do botão com ícone */
-  border: 0; /* Sem borda */
-  border-radius: 50%; /* Borda arredondada */
-  position: absolute; /* Posicionamento absoluto para permitir movimento */
-  top: 50%; /* Centraliza verticalmente */
-  left: 0; /* Posiciona à esquerda */
-  z-index: 1; /* Coloca o botão acima dos outros elementos */
-  transform: translateY(-50%); /* Centralização vertical */
-  animation: slide-back 0.2s; /* Animação de retorno */
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-back 0.2s;
 }
 
-/* Posicionamento do botão no modo claro */
 .light #switch button {
-  animation: slide-in 0.2s forwards; /* Animação ao alternar para o modo claro */
+  animation: slide-in 0.2s forwards;
 }
 
 #switch button:hover {
-  outline: 8px solid var(--highlight-color); /* Destaque do botão ao passar o mouse */
+  outline: 8px solid var(--highlight-color);
 }
 
-/* Estilo do fundo do botão de alternância */
-#switch span {
-  display: block; /* Exibe como bloco */
-  width: 64px; /* Largura do fundo do switch */
-  height: 24px; /* Altura do fundo do switch */
-  background: var(--surface-color); /* Cor de fundo */
-  border: 1px solid var(--stroke-color); /* Borda do fundo */
-  backdrop-filter: blur(4px); /* Efeito de desfoque no fundo */
-  -webkit-backdrop-filter: blur(4px); /* Compatibilidade com Safari */
-  border-radius: 9999px; /* Borda extremamente arredondada */
-}
-
-/* Estilo dos links */
 ul {
-  list-style: none; /* Remove marcadores de lista */
-  display: flex; /* Flexbox para disposição */
-  flex-direction: column; /* Colunas verticais */
-  gap: 16px; /* Espaçamento entre itens */
-  padding: 24px 0; /* Preenchimento superior e inferior */
+  list-style: none;
+  margin-top: 32px;
 }
 
-/* Estilo dos links individuais */
-ul li a {
-  display: flex; /* Flexbox para alinhamento */
-  align-items: center; /* Alinhamento central vertical */
-  justify-content: center; /* Alinhamento central horizontal */
-  padding: 16px 24px; /* Preenchimento interno */
-  background: var(--surface-color); /* Cor de fundo */
-  border: 1px solid var(--stroke-color); /* Borda do link */
-  border-radius: 8px; /* Bordas arredondadas */
-  backdrop-filter: blur(4px); /* Efeito de desfoque */
-  -webkit-backdrop-filter: blur(4px); /* Compatibilidade com Safari */
-  text-decoration: none; /* Remove sublinhado */
-  font-weight: 500; /* Peso da fonte */
-  transition: background 0.2s; /* Transição suave no hover */
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  display: block;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: background 0.3s;
 }
 
-ul li a:hover {
-  background: var(--surface-color-hover); /* Cor de fundo ao passar o mouse */
-  border: 1.5px solid var(--text-color); /* Borda destacada no hover */
+a:hover {
+  background: var(--surface-color-hover);
 }
 
-/* Estilo dos ícones de redes sociais */
 #social-links {
-  display: flex; /* Flexbox para disposição horizontal */
-  justify-content: center; /* Centraliza horizontalmente */
-  padding: 24px 0; /* Preenchimento superior e inferior */
-  font-size: 24px; /* Tamanho dos ícones */
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 #social-links a {
-  display: flex; /* Flexbox para alinhamento */
-  align-items: center; /* Alinhamento central vertical */
-  justify-content: center; /* Alinhamento central horizontal */
-  padding: 16px; /* Preenchimento interno */
-  transition: background 0.2s; /* Transição suave no hover */
-  border-radius: 50%; /* Ícones circulares */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 8px;
+  color: var(--text-color);
 }
 
-#social-links a:hover {
-  background: var(--highlight-color); /* Destaque no hover */
-}
-
-/* Estilo do rodapé */
 footer {
-  padding: 22px 0; /* Preenchimento superior e inferior */
-  text-align: center; /* Alinhamento central do texto */
-  font-size: 14px; /* Tamanho da fonte do rodapé */
-}
-
-/* Ajustes para visualização em telas maiores */
-@media (min-width: 700px) {
-  :root {
-    --bg-url: url(./assets/bg-desktop.jpg); /* Imagem de fundo para desktop */
-  }
-  .light {
-    --bg-url: url(./assets/bg-desktop-light.jpg); /* Imagem de fundo para modo claro em desktop */
-  }
-}
-
-/* Animações para o botão de alternância */
-@keyframes slide-in {
-  from {
-    left: 0; /* Inicia à esquerda */
-  }
-  to {
-    left: 50%; /* Move para o centro */
-  }
+  text-align: center;
+  margin-top: 32px;
 }
 
 @keyframes slide-back {
-  from {
-    left: 50%; /* Inicia no centro */
+  0% {
+    left: 32px;
   }
-  to {
-    left: 0; /* Move de volta para a esquerda */
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 32px;
   }
 }
