@@ -32,11 +32,4 @@ function applyTheme() {
   }
 }
 
-document
-  .getElementById("dev-btn")
-  .addEventListener("click", () => (location.href = "index.html"))
-document
-  .getElementById("music-btn")
-  .addEventListener("click", () => (location.href = "music.html"))
-
 applyTheme()
